@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <>
+        <meta charset="UTF 8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="C:\Users\brani\OneDrive\Bureau\projey PAW\style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+    <body>
+        <header>
+            <a href="C:\Users\brani\OneDrive\Bureau\projey PAW\index.html" class="logo">RANIA <span> PILATES</span></a>
+              
+
+
+            <ul class="navbar">
+                <li><a href="C:\Users\brani\OneDrive\Bureau\projey PAW\.vscode\index.html">Home</a></li>
+                <li><a href="C:\Users\brani\OneDrive\Bureau\projey PAW\.vscode\programs.html">Programs</a></li>
+                <li><a href="C:\Users\brani\OneDrive\Bureau\projey PAW\About Pilates.html">About Pilates</a></li>
+                <li><a href="C:\Users\brani\OneDrive\Bureau\projey PAW\Pricing.html">Pricing</a></li>
+                <li><a href="C:\Users\brani\OneDrive\Bureau\projey PAW\.vscode\booking.html">Booking</a></li>
+            </ul>
+
+            <div class="top-btn">
+                <a href="#" class="nav-btn">Join Us</a>
+            </div>
+
+        </header>
+        <section class="booking-wrapper">
+            <div class="booking-card" id="bookingContent">
+                <h2>Reserve Your Session</h2>
+                <p>Fill in the details below to book your spot.</p>
+                <form id="bookingForm">
+                    <div class="input-box">
+                        <label>Full Name</label>
+                        <input type="text" id="userName"placeholder="Your Name" required> 
+                    </div>
+                    <div class="input-box">
+                        <label>Select Class</label>
+                        <select id="className"required>
+                            <option value=""> Choose Program</option>
+                            <option value="mat"> Mat Pilates</option>
+                            <option value="reformer"> Reformer Pilates</option>
+                            <option value="private">Private Session </option>
+                            <option value="beginners"> Beginners Class</option>
+                            <option value="advanced"> Advanced Core</option>
+                            <option value="Preenatal"> Prenatal Pilates</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label>Date</label>
+                            <input type="time" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="confirm-btn">Confirm Booking</button>
+
+                </form>
+            </div>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#bookingForm').on('submit', function(e){
+                e.preventDefault(); 
+                
+                
+                $('#bookingContent').fadeOut(500, function(){
+                    $(this).html(`
+                        <div style="text-align: center; padding: 40px;">
+                            <i class='bx bx-check-circle' style='font-size: 70px; color: #5c0a25;'></i>
+                            <h2 style="color: #5c0a25;">Success!</h2>
+                            <p>Thank you <b>${$('#userName').val()}</b>, your request for <b>${$('#className option:selected').text()}</b> has been sent.</p>
+                            <br>
+                            <a href="index.html" style="color: #5c0a25; font-weight: bold;"> Back to Home </a>
+                        </div>
+                    `).fadeIn(500);
+                });
+            });
+        });
+    </script>
+        
+
+    </body>
+
+
+</html>
